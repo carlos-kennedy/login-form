@@ -33,38 +33,14 @@ body {
 
 input {
   width: 100%;
+  padding: 1.6rem;
+  padding-left: 0;
   background: transparent;
 
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.6rem;
   color: var(--text-inputs);
-}
-
-.custom-check input {
-  display: none;
-}
-
-.custom-check input + label:before {
-  content: "";
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.5rem;
-
-  border-radius: 0.4rem;
-  border: 0.1rem solid var(--border);
-
-  display: inline-block;
-
-  vertical-align: middle;
-
-  transition: filter 0.4s;
-}
-
-.custom-check input:checked + label:before {
-  background: var(--button) url(/assets/check.svg) no-repeat center;
-
-  filter: drop-shadow(0 0 1.3rem var(--border-focus));
 }
 
 .wrapper {
@@ -75,28 +51,39 @@ input {
   flex-direction: column;
 }
 
+/* ======FORM/INPUTS======== */
+
 .logo {
   margin-bottom: 3rem;
 }
 
+.inputs {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--sub-title);
+}
+
 .inputs .i-mail {
-  padding: 1.6rem;
+  padding-left: 1rem;
 
   border: 0.1rem solid var(--border);
   border-radius: 0.4rem;
 
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .inputs .i-pass {
-  padding: 1.6rem;
-
-  display: flex;
-  gap: 0.5rem;
+  padding-left: 1rem;
 
   border: 0.1rem solid var(--border);
   border-radius: 0.4rem;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .inputs .i-mail:focus-within,
@@ -139,13 +126,6 @@ a {
   color: var(--sub-title);
 }
 
-.inputs {
-  display: flex;
-  flex-direction: column;
-
-  color: var(--sub-title);
-}
-
 .inputs .l-password {
   margin-top: 2rem;
 }
@@ -170,6 +150,31 @@ a {
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+.custom-check input {
+  display: none;
+}
+
+.custom-check input + label:before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--border);
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+  transition: filter 0.4s;
+}
+
+.custom-check input:checked + label:before {
+  background: var(--button) url(/assets/check.svg) no-repeat center;
+
+  filter: drop-shadow(0 0 1.3rem var(--border-focus));
 }
 
 .inputs .l-checkbox {
