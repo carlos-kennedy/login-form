@@ -31,6 +31,16 @@ body {
   background: var(--background);
 }
 
+input {
+  width: 100%;
+  background: transparent;
+
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: var(--text-inputs);
+}
+
 .custom-check input {
   display: none;
 }
@@ -40,56 +50,67 @@ body {
   width: 2rem;
   height: 2rem;
   margin-right: 0.5rem;
+
+  border-radius: 0.4rem;
   border: 0.1rem solid var(--border);
-  vertical-align: middle;
+
   display: inline-block;
+
+  vertical-align: middle;
+
+  transition: filter 0.4s;
+}
+
+.custom-check input:checked + label:before {
+  background: var(--button) url(/assets/check.svg) no-repeat center;
+
+  filter: drop-shadow(0 0 1.3rem var(--border-focus));
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
   padding-top: 4rem;
   padding-inline: 2rem;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
   margin-bottom: 3rem;
 }
 
-.inputs input {
-  padding: 1.6rem 3.5rem;
-  background-color: transparent;
+.inputs .i-mail {
+  padding: 1.6rem;
+
   border: 0.1rem solid var(--border);
   border-radius: 0.4rem;
 
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: clamp(14px, 1.4rem, 2vw);
-  line-height: 1.6rem;
-
-  color: var(--text-inputs);
+  display: flex;
+  gap: 0.5rem;
 }
 
-.email {
-  background: url(/assets/mail.svg) no-repeat scroll 1rem 1.3rem;
+.inputs .i-pass {
+  padding: 1.6rem;
+
+  display: flex;
+  gap: 0.5rem;
+
+  border: 0.1rem solid var(--border);
+  border-radius: 0.4rem;
 }
 
-.password {
-  background: url(/assets/lock.svg) no-repeat scroll 1rem 1.3rem;
-}
-
-.email:focus-within,
-.password:focus-within {
-  box-shadow: 0 0 0 0.2rem var(--border-focus);
+.inputs .i-mail:focus-within,
+.inputs .i-pass:focus-within {
   border: 0.1rem solid var(--border-focus);
+
+  box-shadow: 0 0 0 0.2rem var(--border-focus);
 }
 
-.email:focus-within {
-  background: url(/assets/mail-y.svg) no-repeat scroll 1rem 1.3rem;
-}
+.inputs .i-mail:focus-within path,
+.inputs .i-pass:focus-within path {
+  stroke: var(--border-focus);
 
-.password:focus-within {
-  background: url(/assets/lock-y.svg) no-repeat scroll 1rem 1.3rem;
+  filter: drop-shadow(0 0 1.8rem var(--border-focus));
 }
 
 a {
@@ -144,10 +165,11 @@ a {
 }
 
 .inputs .check-pass {
+  margin-block: 2rem;
+
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-block: 2rem;
 }
 
 .inputs .l-checkbox {
@@ -171,6 +193,8 @@ a {
   line-height: 2.7rem;
 
   color: var(--text-button);
+
+  cursor: pointer;
 }
 
 .inputs .subscribe {
