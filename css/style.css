@@ -139,8 +139,8 @@ a {
 .inputs .l-checkbox {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 }
 
 .inputs .check-pass {
