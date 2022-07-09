@@ -31,6 +31,20 @@ body {
   background: var(--background);
 }
 
+.custom-check input {
+  display: none;
+}
+
+.custom-check input + label:before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  border: 0.1rem solid var(--border);
+  vertical-align: middle;
+  display: inline-block;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -50,7 +64,7 @@ body {
 
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: clamp(14px, 1.4rem, 2vw);
   line-height: 1.6rem;
 
   color: var(--text-inputs);
@@ -123,9 +137,10 @@ a {
 }
 
 .inputs .l-checkbox {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .inputs .check-pass {
