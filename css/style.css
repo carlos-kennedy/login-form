@@ -10,6 +10,7 @@
 
 :root {
   --background: #191816;
+  --background-form: #24221f;
   --title: #d4ccb6;
   --sub-title: #afb6c2;
   --link: #ffc632;
@@ -31,6 +32,14 @@ body {
   background: var(--background);
 }
 
+.wrapper {
+  padding-top: 4rem;
+  padding-inline: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
 input {
   width: 100%;
   padding: 1.6rem;
@@ -43,12 +52,8 @@ input {
   color: var(--text-inputs);
 }
 
-.wrapper {
-  padding-top: 4rem;
-  padding-inline: 2rem;
-
-  display: flex;
-  flex-direction: column;
+img {
+  display: none;
 }
 
 /* ======FORM/INPUTS======== */
@@ -174,6 +179,8 @@ a {
 .custom-check input:checked + label:before {
   background: var(--button) url(/assets/check.svg) no-repeat center;
 
+  border: 0.1rem solid var(--border-focus);
+
   filter: drop-shadow(0 0 1.3rem var(--border-focus));
 }
 
@@ -200,8 +207,80 @@ a {
   color: var(--text-button);
 
   cursor: pointer;
+
+  transition: filter 0.5s;
+}
+
+.inputs button:hover {
+  filter: brightness(0.8);
 }
 
 .inputs .subscribe {
   margin: 0 auto;
+
+  transition: filter 0.2s;
+}
+
+.inputs .forget-pass {
+  transition: filter 0.2s;
+}
+
+.inputs .subscribe:hover,
+.inputs .forget-pass:hover {
+  filter: brightness(1.2);
+}
+
+/* ======= RESPONSIVIDADE ======== */
+@media (min-width: 1024px) {
+  /* ======= RESET ======== */
+
+  * {
+    margin: initial;
+    padding: initial;
+    border: initial;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100vh;
+    display: initial;
+  }
+
+  .wrapper {
+    display: grid;
+    gap: 7.4rem;
+    margin-left: 7.4rem;
+    padding: initial;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "B A";
+  }
+
+  .col-a {
+    grid-area: A;
+  }
+
+  .col-b {
+    grid-area: B;
+    align-self: center;
+  }
+
+  .logo {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .form-container {
+    padding-block: 5.5rem;
+    padding-inline: 11.8rem;
+    background: var(--background-form);
+  }
+
+  .inputs{
+    width: 100%;
+  }
 }
