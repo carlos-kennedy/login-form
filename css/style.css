@@ -91,6 +91,10 @@ img {
   align-items: center;
 }
 
+.inputs .hide-pass {
+  margin-right: 1.6rem;
+}
+
 .inputs .i-mail:focus-within,
 .inputs .i-pass:focus-within {
   border: 0.1rem solid var(--border-focus);
@@ -156,6 +160,7 @@ a {
   align-items: center;
   flex-direction: row;
 }
+
 .custom-check input {
   display: none;
 }
@@ -238,10 +243,18 @@ a {
     margin: initial;
     padding: initial;
     border: initial;
+    box-shadow: initial;
   }
 
   body {
+    overflow: hidden;
     width: 100%;
+  }
+
+  input,
+  label,
+  a {
+    font-size: clamp(14px, 1.6rem, 2vw);
   }
 
   img {
@@ -253,19 +266,25 @@ a {
   .wrapper {
     display: grid;
     gap: 7.4rem;
-    margin-left: 7.4rem;
+    margin-left: 7rem;
     padding: initial;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "B A";
+    grid-template-areas: "A B";
   }
 
   .col-a {
     grid-area: A;
+    align-self: center;
   }
 
   .col-b {
     grid-area: B;
-    align-self: center;
+  }
+
+  .img-side {
+    -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   .logo {
@@ -278,9 +297,39 @@ a {
     padding-block: 5.5rem;
     padding-inline: 11.8rem;
     background: var(--background-form);
+    transition: border 0.8s;
   }
 
-  .inputs{
+  .form-container:hover {
+    border: 0.1rem inset var(--border-focus);
+  }
+
+  .inputs {
     width: 100%;
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
   }
 }
