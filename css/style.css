@@ -106,9 +106,11 @@ img {
 }
 
 .inputs .i-mail:focus-within path,
-.inputs .i-pass:focus-within path {
+.inputs .i-pass:focus-within path,
+.inputs .i-pass:focus-within .fa-regular {
   stroke: var(--border-focus);
 
+  color: var(--border-focus);
   filter: drop-shadow(0 0 1.8rem var(--border-focus));
 }
 
@@ -269,7 +271,7 @@ a {
   .wrapper {
     margin-left: 7.4rem;
     padding: initial;
-    
+
     display: grid;
     gap: 7.4rem;
     grid-template-columns: 1fr 1fr;
