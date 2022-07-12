@@ -267,10 +267,11 @@ a {
   }
 
   .wrapper {
+    margin-left: 7.4rem;
+    padding: initial;
+    
     display: grid;
     gap: 7.4rem;
-    margin-left: 7rem;
-    padding: initial;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "A B";
   }
@@ -300,15 +301,12 @@ a {
     padding-block: 5.5rem;
     padding-inline: 11.8rem;
     background: var(--background-form);
+
     transition: border 0.8s;
   }
 
   .form-container:hover {
-    border: 0.1rem inset var(--border-focus);
-  }
-
-  .inputs {
-    width: 100%;
+    border: 0.1rem solid var(--border-focus);
   }
 }
 
